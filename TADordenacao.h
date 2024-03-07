@@ -1,0 +1,6 @@
+#ifndef TAD_ORDENACAO_H
+#define TAD_ORDENACAO_H
+
+
+
+#endif // TAD_ORDENACAO_H
