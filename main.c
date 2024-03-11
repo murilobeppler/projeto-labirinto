@@ -3,7 +3,9 @@
 #include <string.h>
 #include <math.h>
 #include <time.h>
-#include "TADgrafos.h"
+#include <stdbool.h>
+#include "TADmatrizADJ.h"
+#include "TADlistaADJ.h"
 #include "TADordenacao.h"
 
 int main () {
