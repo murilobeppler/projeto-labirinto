@@ -9,11 +9,6 @@ typedef struct {
 } Ranking;
 
 int lerArquivo(char *nomeArquivo, Ranking *r);
-void bubbleSortArea(Ranking *r, int n, int a);
-void bubbleSortTempoTotal(Ranking *r, int n);
-void bubbleSortPontuacao(Ranking *r, int n);
-void troca(Ranking *r, int i, int j);
-void bubbleSortNome(Ranking *r, int n);
 void escreverArquivo(char *nomeArquivo, Ranking r);
 void mostrarRanking();
 
