@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
+#include "TADranking.h"
+
+void testeRanking(){
+    Ranking r;
+    mostrarRanking();
+    for (int i = 0; i < 10; i++)
+        r.area[i] = rand() % 10;
+    r.tempo_total = 0;
+    for (int i = 0; i < 10; i++)
+        r.tempo_total += r.area[i];
+
+    printf("Digite o nome: ");
+    fflush(stdin);
+    fgets(r.nome, 50, stdin);
+    int i = 0;
+    while (r.nome[i] != '\n' && r.nome[i] != '\0') i++;
+    if (r.nome[i] == '\n') r.nome[i] = '\0';  // Remove a nova linha, se houver
+    r.pontuacao = rand() % 10;
+    escreverArquivo("Ranking.txt", r);
+}
+int main()
+{
+    srand(time(NULL));
+    testeRanking();
+
+    return 0;
+}
