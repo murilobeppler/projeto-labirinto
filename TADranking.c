@@ -8,13 +8,14 @@ int lerArquivo(char *nomeArquivo, Ranking *r) {
     if (arquivo == NULL) {
         return 0;
     }
-  int x = 0;
-    while (fscanf(arquivo, "%s %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %d", r[x].nome, &r[x].area[0], &r[x].area[1], &r[x].area[2], &r[x].area[3], &r[x].area[4], &r[x].area[5], &r[x].area[6], &r[x].area[7], &r[x].area[8], &r[x].area[9], &r[x].tempo_total, &r[x].pontuacao) != EOF) {
+    int x = 0;
+    while (fscanf(arquivo, "%s %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %d",r[x].nome, &r[x].area[0], &r[x].area[1], &r[x].area[2], &r[x].area[3], &r[x].area[4], &r[x].area[5], &r[x].area[6], &r[x].area[7], &r[x].area[8], &r[x].area[9], &r[x].tempo_total, &r[x].pontuacao) != EOF) {
         x++;
     }
   fclose(arquivo);
   return x;
 }
+
 
 void bubbleSortArea(Ranking *r, int n, int a) {
     int i, j;
@@ -67,11 +68,12 @@ void troca(Ranking *r, int i, int j){
   r[j] = temp;
 }
 void escreverArquivo(char *nomeArquivo, Ranking r) {
-    Ranking *ra;
+    Ranking ra[10];
     int tamanhoarquivo = lerArquivo(nomeArquivo,ra);
+    //printf("%d\n",tamanhoarquivo);
     FILE *arquivo = fopen(nomeArquivo, "w");
     if (arquivo == NULL) {
-        printf("Não foi possível criar o arquivo %s.\n", nomeArquivo);
+        printf("NÃ£o foi possÃ­vel criar o arquivo %s.\n", nomeArquivo);
         return;
     }
     int i = 0;
