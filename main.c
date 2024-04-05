@@ -7,9 +7,9 @@
 #include "TADmatrizADJ.h"
 #include "TADlistaADJ.h"
 #include "TADordenacao.h"
+#include "TADranking.h"
 
 int main () {
-
     printf("hello world!");
     return 0;
 } 
